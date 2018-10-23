@@ -24,9 +24,9 @@ import javax.transaction.Transactional;
 @Component
 public class AddUser {
 
-    private final UserService service;
+    private final UserRepository service;
 
-    public AddUser(UserService service) {
+    public AddUser(UserRepository service) {
         this.service = service;
     }
 
@@ -73,7 +73,7 @@ public class AddUser {
     public String execute() {
 
         try {
-            service.add(new User(id, firstName, lastName));
+            service.save(new User(id, firstName, lastName));
         } catch (Exception e) {
             this.errorMessage = e.getMessage();
             return "failure";

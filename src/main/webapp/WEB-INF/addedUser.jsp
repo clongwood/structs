@@ -16,4 +16,11 @@ limitations under the License.
 -->
 <title>User added</title>
 
-<h3>User added successfully</h3>
+
+
+
+<%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
+
+<t:layout title="User added">
+    <h2>User added successfully</h2>
+</t:layout>
